@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Helper {
+  /*
+  * description: Show a message
+  * input: a message string
+  * output: a scaffold snackBar
+  */
+  static Future showSnackBar(String message, {bool isError = false}) async {
+    return ScaffoldMessenger.of(Get.context!)
+        .showSnackBar(SnackBar(content: Text(message)));
+  }
+
   /*
   * description: Change colors to material colors
   * input: Color

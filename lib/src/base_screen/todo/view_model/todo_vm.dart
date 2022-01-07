@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:todo/services/firebase/collections.dart';
 import 'package:todo/src/base_screen/todo/model/tasks.dart';
+import 'package:todo/utils/helper.dart';
 
 class TodoVM extends ChangeNotifier {
   Task? removedTask;
@@ -33,6 +34,7 @@ class TodoVM extends ChangeNotifier {
       await documentReference.set(_task.toMap());
       _task.docRef = documentReference;
       _tasks.add(_task);
+      Helper.showSnackBar("Addded the task Succesfully!");
     } catch (e) {
       log(e.toString());
     }
@@ -63,6 +65,7 @@ class TodoVM extends ChangeNotifier {
     try {
       await Future.wait(List.generate(
           _tasks.length, (index) => _tasks[index].docRef!.delete()));
+      Helper.showSnackBar("All task Deleted Succesfully ");
     } catch (e) {
       print(e.toString());
     }

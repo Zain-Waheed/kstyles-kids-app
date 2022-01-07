@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo/resources/resources.dart';
+import 'package:todo/src/base_screen/todo/view/todo_view.dart';
 import 'package:todo/src/landing_pages/view/splash.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       initialRoute: SplashView.route,
       getPages: [
         GetPage(name: SplashView.route, page: () => const SplashView()),
-        GetPage(name: "/name", page: () => const SplashView()),
+        GetPage(name: TodoView.route, page: () => const TodoView()),
       ],
       title: 'Todo App',
       theme: ThemeData(
