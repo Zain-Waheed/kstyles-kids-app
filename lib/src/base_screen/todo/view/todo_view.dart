@@ -86,7 +86,7 @@ class TodoView extends StatelessWidget {
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                       onPressed: () {
-                        dAll(context);
+                        deleteAll(context);
                       },
                       gradient: LinearGradient(colors: [
                         Color.fromRGBO(116, 116, 191, 1.0),
@@ -231,27 +231,17 @@ class TodoView extends StatelessWidget {
   }
 }
 
-void dAll(BuildContext context) {
+void deleteAll(BuildContext context) {
   Provider.of<TodoVM>(context, listen: false).deleteAll();
   Navigator.pop(context);
 }
 
 void checkAll(BuildContext context) {
   Provider.of<TodoVM>(context, listen: false).checkAll();
-  // BotToast.showSimpleNotification(
-  //   title: "To Do List 📝",
-  //   subTitle: 'All task Checked Succesfully ',
-  //   borderRadius: 5.0,
-  // );
   Navigator.pop(context);
 }
 
 void uncheckAll(BuildContext context) {
   Provider.of<TodoVM>(context, listen: false).uncheckAll();
-  // BotToast.showSimpleNotification(
-  //   title: "To Do List 📝",
-  //   subTitle: 'All task UnChecked Succesfully ',
-  //   borderRadius: 5.0,
-  // );
   Navigator.pop(context);
 }

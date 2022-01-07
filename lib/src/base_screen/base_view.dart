@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'profile/view/profile_view.dart';
+import 'todo/view/todo_view.dart';
 
 class BaseView extends StatefulWidget {
   const BaseView({Key? key}) : super(key: key);
@@ -17,10 +18,7 @@ class _BaseViewState extends State<BaseView> {
     return Scaffold(
       body: IndexedStack(
         index: currentPage,
-        children: const [
-          //TodoView()
-          ProfileView()
-        ],
+        children: const [TodoView(), ProfileView()],
       ),
     );
   }
