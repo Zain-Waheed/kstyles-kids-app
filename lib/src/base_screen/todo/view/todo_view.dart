@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:todo/constant/enums.dart';
-import 'package:todo/resources/resources.dart';
 import 'package:todo/src/base_screen/todo/view/widgets/create_todo.dart';
 import 'package:todo/src/base_screen/todo/view/widgets/custom_dialog.dart';
 import 'package:todo/src/base_screen/todo/view/widgets/tasks_list.dart';
@@ -102,11 +101,11 @@ class TodoView extends StatelessWidget {
                       leading: Icon(Icons.delete),
                       title: Text('Delete All'),
                     ),
-                    ListTile(
-                      onTap: null,
-                      leading: Icon(Icons.color_lens_sharp),
-                      title: Text('Change Theme'),
-                    ),
+                    // ListTile(
+                    //   onTap: null,
+                    //   leading: Icon(Icons.color_lens_sharp),
+                    //   title: Text('Change Theme'),
+                    // ),
                     ListTile(
                       onTap: () {
                         showDialog(
@@ -116,7 +115,7 @@ class TodoView extends StatelessWidget {
                                 title: "To Do",
                                 descriptions:
                                     ' 📝 A simple ad free To Do App\n 📝 Press the add icon button to add a task\n 📝swipe left or right on any task to delete\n 📝Check or Uncheck any task\n 📝Delete all task at once\n 📝Check all tasks at once \n 📝Customize your own theme',
-                                text: "Check GitHub",
+                                text: "OK",
                               );
                             });
                       },

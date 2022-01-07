@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Constants {
   Constants._();
@@ -74,7 +75,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                 alignment: Alignment.bottomCenter,
                 child: TextButton(
                   onPressed: () {
-                    _launchURL();
+                    Get.back();
                   },
                   child: Text(
                     widget.text ?? "",
@@ -100,13 +101,4 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
       ],
     );
   }
-}
-
-_launchURL() async {
-  // const url = 'https://github.com/AshAman999/ToDo-app-flutter';
-  // if (await canLaunch(url)) {
-  //   await launch(url);
-  // } else {
-  //   throw 'Could not launch $url';
-  // }
 }
