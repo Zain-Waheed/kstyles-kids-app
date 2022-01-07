@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:todo/resources/resources.dart';
 import 'package:todo/src/auth/view/auth_view.dart';
 
 class SplashView extends StatefulWidget {
@@ -13,17 +14,28 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 3), () {
-      Get.toNamed(AuthView.route);
+    Future.delayed(const Duration(seconds: 3), () {
+      Get.offNamed(AuthView.route);
     });
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: const Center(
-        child: const Text("TODO APP"),
+    return Scaffold(
+      body: Container(
+        height: Get.height,
+        width: Get.width,
+        color: R.colors.themeColor,
+        child: Center(
+          child: Text(
+            "TODO APP",
+            style: TextStyle(
+                color: R.colors.white,
+                fontSize: 30,
+                fontWeight: FontWeight.bold),
+          ),
+        ),
       ),
     );
   }
