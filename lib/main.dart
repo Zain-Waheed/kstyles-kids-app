@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 import 'package:todo/resources/resources.dart';
 import 'package:todo/src/base_screen/todo/view/todo_view.dart';
+import 'package:todo/src/base_screen/todo/view_model/todo_vm.dart';
 import 'package:todo/src/landing_pages/view/splash.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (context) => TodoVM()),
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
