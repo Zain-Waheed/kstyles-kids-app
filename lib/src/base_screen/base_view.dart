@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import 'base_vm.dart';
 import 'profile/view/profile_view.dart';
 import 'todo/view/todo_view.dart';
 
@@ -16,11 +18,23 @@ class _BaseViewState extends State<BaseView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: IndexedStack(
-        index: currentPage,
-        children: const [TodoView(), ProfileView()],
-      ),
-    );
+    return Consumer<BaseVM>(builder: (context, vm, child) {
+      return Scaffold(
+        body: IndexedStack(
+          index: vm.baseCurrentPage,
+          children: const [TodoView(), ProfileView()],
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: vm.baseCurrentPage,
+          onTap: (index) {
+            vm.updatePage(index);
+          },
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.description),label: "TODO"),
+            BottomNavigationBarItem(icon: Icon(Icons.person),label: "Profile")
+          ],
+        ),
+      );
+    });
   }
 }

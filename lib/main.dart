@@ -10,11 +10,14 @@ import 'package:todo/src/base_screen/todo/view/todo_view.dart';
 import 'package:todo/src/base_screen/todo/view_model/todo_vm.dart';
 import 'package:todo/src/landing_pages/view/splash.dart';
 
+import 'src/base_screen/base_vm.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (context) => TodoVM()),
+    ChangeNotifierProvider(create: (context) => BaseVM()),
   ], child: const MyApp()));
 }
 
