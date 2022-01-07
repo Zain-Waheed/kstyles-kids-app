@@ -5,6 +5,7 @@ import 'package:todo/constant/constant.dart';
 import 'package:todo/src/base_screen/base_view.dart';
 
 class AuthView extends StatelessWidget {
+  static String route = "/auth";
   const AuthView({Key? key}) : super(key: key);
 
   @override

@@ -5,6 +5,7 @@ import 'todo/view/todo_view.dart';
 
 class BaseView extends StatefulWidget {
   const BaseView({Key? key}) : super(key: key);
+  static String route = '/base';
 
   @override
   _BaseViewState createState() => _BaseViewState();
