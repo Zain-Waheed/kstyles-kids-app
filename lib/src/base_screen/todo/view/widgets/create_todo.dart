@@ -68,7 +68,7 @@ class CreateTodoView extends StatelessWidget {
                     topRight: Radius.circular(10),
                     bottomLeft: Radius.circular(10),
                     bottomRight: Radius.circular(10)),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     color: Colors.orange,
                     spreadRadius: 1,

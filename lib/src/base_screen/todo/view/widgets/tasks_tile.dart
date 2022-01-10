@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TaskTile extends StatelessWidget {
@@ -12,11 +11,6 @@ class TaskTile extends StatelessWidget {
       required this.taskTitle,
       required this.checkBoxCallBack,
       required this.longpresscallback});
-  // void checkBoxCallback(bool checkBoxstate) {
-  //   // setState(() {
-  //   //   isTrue = checkBoxstate;
-  //   // });
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -87,25 +81,11 @@ class TaskTile extends StatelessWidget {
       ),
     );
   }
+
+  Widget container() {
+    return Container(
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+      child: Text(""),
+    );
+  }
 }
-//  ListTile(
-//             leading: Icon(
-//               Icons.menu_outlined,
-//               color: Colors.deepOrange[300],
-//             ),
-//             // onLongPress: longpresscallback,
-//             contentPadding: EdgeInsets.fromLTRB(15.0, 4.0, 5.0, 4.0),
-//             title: Transform(
-//               transform: Matrix4.translationValues(-20, 0.0, 0.0),
-//               child: Text(
-//                 taskTitle,
-//                 style: TextStyle(
-//                   decoration: isTrue ? TextDecoration.lineThrough : null,
-//                 ),
-//               ),
-//             ),
-//             trailing: Checkbox(
-//               activeColor: Colors.deepOrange,
-//               value: isTrue,
-//               onChanged: checkBoxCallBack,
-//             )),

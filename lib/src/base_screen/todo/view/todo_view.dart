@@ -90,7 +90,7 @@ class TodoView extends StatelessWidget {
                                 p.deleteAll();
                                 Navigator.pop(context);
                               },
-                              gradient: LinearGradient(colors: [
+                              gradient: LinearGradient(colors: const [
                                 Color.fromRGBO(116, 116, 191, 1.0),
                                 Color.fromRGBO(52, 138, 199, 1.0)
                               ]),
@@ -239,10 +239,8 @@ class TodoView extends StatelessWidget {
             child: Center(
           child: CircularProgressIndicator(),
         ));
-        break;
       case LoadingStateType.loaded:
         return TasksWidget();
-        break;
       case LoadingStateType.error:
         return Center(
             child: Column(
@@ -255,7 +253,6 @@ class TodoView extends StatelessWidget {
                 child: Text("Retry")),
           ],
         ));
-        break;
     }
   }
 }
